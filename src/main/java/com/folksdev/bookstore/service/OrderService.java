@@ -27,7 +27,7 @@ public class OrderService {
         List<Optional<Book>> bookList = bookIdList.stream().map(bookService::findById).collect(Collectors.toList());
 
         Double totalPrice = bookList.stream()
-                .map(optinonalBook -> optinonalBook.map(Book::getPrice).orElse(0.0))
+                .map(optionalBook -> optionalBook.map(Book::getPrice).orElse(0.0))
                 .reduce(0.0, Double::sum);
 
         Order order = Order.builder()

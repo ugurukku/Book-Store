@@ -31,7 +31,7 @@ public class BookStoreApplication implements CommandLineRunner {
     @Override
     public void run(String... args){
 
-        Book book = Book.builder().name("Yuzuklerin efendisi").author("JRR Tolkien").price(10.0).stock(15).build();
+        Book book = Book.builder().name("Yuzuklerin efendisi").author("JRR Tolkien").price(10.4).stock(15).build();
 
         Book book2 = Book.builder().name("Harry Potter").author("JK Rowling").price(12.0).stock(18).build();
 
