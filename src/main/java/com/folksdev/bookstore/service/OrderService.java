@@ -3,8 +3,6 @@ package com.folksdev.bookstore.service;
 import com.folksdev.bookstore.models.Book;
 import com.folksdev.bookstore.models.Order;
 import com.folksdev.bookstore.repository.OrderRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
-    private final Logger logger = LoggerFactory.getLogger(OrderService.class);
+
 
     private final OrderRepository orderRepository;
     private final BookService bookService;

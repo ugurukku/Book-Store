@@ -18,6 +18,12 @@ public class BookStoreApplication implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
+
+        for (String s:args){
+
+            System.out.println("he"+s);
+        }
+
         SpringApplication.run(BookStoreApplication.class, args);
     }
 
