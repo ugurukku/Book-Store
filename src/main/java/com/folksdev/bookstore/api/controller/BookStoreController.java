@@ -28,6 +28,11 @@ public class BookStoreController {
         return ResponseEntity.ok(bookService.findAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Book> getBook(@PathVariable("id") Integer id){
+        return ResponseEntity.ok(bookService.findById(id).orElse(new Book(-1,"Teyin edilmedi","Teyin edilmedi",-1.0,-1)));
+    }
+
     @PostMapping
     public ResponseEntity<Order> putAnOrder(@RequestBody BookOrderRequest bookOrderRequest) {
         Order order = orderService.putAnOrder(bookOrderRequest.getBookIdList(), bookOrderRequest.getUsername());

@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class BookStoreApplication implements CommandLineRunner {
+public class BookStoreApplication implements CommandLineRunner{
 
     private final BookRepository bookRepository;
 
@@ -19,11 +19,6 @@ public class BookStoreApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
 
-        for (String s:args){
-
-            System.out.println("he"+s);
-        }
-
         SpringApplication.run(BookStoreApplication.class, args);
     }
 
@@ -31,11 +26,11 @@ public class BookStoreApplication implements CommandLineRunner {
     @Override
     public void run(String... args){
 
-        Book book = Book.builder().name("Yuzuklerin efendisi").author("JRR Tolkien").price(10.4).stock(15).build();
+        Book book = Book.builder().id(1).name("Yuzuklerin efendisi").author("JRR Tolkien").price(10.4).stock(15).build();
 
-        Book book2 = Book.builder().name("Harry Potter").author("JK Rowling").price(12.0).stock(18).build();
+        Book book2 = Book.builder().id(2).name("Harry Potter").author("JK Rowling").price(12.0).stock(18).build();
 
-        Book book3 = Book.builder().name("Murderer in East Express").author("Agatha Cristie").price(13.0).stock(45).build();
+        Book book3 = Book.builder().id(3).name("Murderer in East Express").author("Agatha Cristie").price(13.0).stock(45).build();
 
         bookRepository.saveAll(Arrays.asList(book, book2, book3));
 

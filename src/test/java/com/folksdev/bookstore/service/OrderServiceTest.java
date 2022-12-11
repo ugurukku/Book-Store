@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+
 public class OrderServiceTest {
 
     private OrderService orderService;
@@ -48,15 +49,13 @@ public class OrderServiceTest {
                 .userName(username)
                 .build();
 
-        for (Integer i : idList) {
-            Mockito.when(bookService.findById(i)).thenReturn(Optional.of(book));
-        }
+        Mockito.when(bookService.findById(1)).thenReturn(Optional.of(book));
 
         Mockito.when(orderRepository.save(order)).thenReturn(order);
 
-        Order result = orderService.putAnOrder(idList,username);
+        Order result = orderService.putAnOrder(idList, username);
 
-        Assert.assertEquals(order,result);
+        Assert.assertEquals(order, result);
 
         for (Integer i : idList) {
             Mockito.verify(bookService).findById(i);
